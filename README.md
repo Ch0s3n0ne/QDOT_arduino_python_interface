@@ -9,6 +9,8 @@
 | HIGH        	| LOW         	|       SCL3/SDA3       	|
 | HIGH        	| HIGH        	|       SCL4/SDA4       	|
 
+Através da linha SCL/SDA
+
 ## DAC's controladas pelas linhas I2C
 | Linhas IIC |           | DAC's controladas |             |
 |------------|-----------|:-------------------:|-------------|
@@ -44,7 +46,7 @@ DB22 -> Seleciona se iremos fazer operação de multiplos bytes seguidos
 | 1  	| 1  	| 1  	| Internal reference setup (on/off) 	|
 
 
-Temos ainda de selecionar que DAC interna selecionar (temos 2 DAC's  dentro de cada):
+Temos ainda de escolher que DAC interna utilizar (temos 2 DAC's  dentro de cada):
 
 | C2 	| C1 	| C0 	| Command 	|
 |----	|----	|----	|---------	|
@@ -70,3 +72,9 @@ Exemplifico como julgo métodos de escrever para a DAC_REF_1 referenciando a DAC
 
 # Arduino para controlar ADC 
 
+Controlo através da linha SCL0/SDA0
+
+| ADDRESS 	|             	|
+|---------	|-------------	|
+| 0010100 	| ADC pos-amp 	|
+| 0110101 	| ADC pré-amp   |
