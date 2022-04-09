@@ -1,5 +1,17 @@
 # Arduino para  controlar a DAC
 
+## Funcionalidade do código de controlo da DAC
+
+[I2C master DAC controller code](DAC_ADC_communication/DAC_ADC_communication.ino)
+
+De momento o código desenvolvido deverá permitir a repetição de um determinado comando I2C através do pressionamento de um botão externo ao 
+ao Arduino. 
+
+A utilização de um novo comando deverá ser feita em código e seguida e um upload para o arduino. O inicio da comunicação I2C pelo master só é
+autorizado após pressionar o botão.  
+
+
+
 ## Seleção das linhas IIC
 
 | I2C SELECT1 	| I2C SELECT2 	| LINHA I2C SELECIONADA 	|
@@ -54,27 +66,47 @@ Temos ainda de escolher que DAC interna utilizar (temos 2 DAC's  dentro de cada)
 | 0  	| 0  	|  1 	| DAC B   	|
 | 1  	| 1  	|  1 	| Ambas   	|
 
+### Exemplos
+
 Exemplifico como julgo métodos de escrever para a DAC_REF_1 referenciando a DAC A interna (V_REF_1):
 
-0001111 0x 111 xxx xxxxxxxx xxxxxxx0 -> o modo default é com referencia interna desativada não deve ser necessário usar este comando
+00011110 0x 111 xxx xxxxxxxx xxxxxxx0 -> o modo default é com referencia interna desativada não deve ser necessário usar este comando
 
 1ºMétodo:
-* 0001111 00 110 xxx xxxxxxxx xxxxxx11 (x é o mesmo que dizer que é irrelevante ser 1 ou 0) -> fizemos setup do LDAC o que implica que o canal é atualizado automaticamente após escrevermos no imput register
-* 0001111 00 000 000 11111111 11111111 (neste caso colocavamos 1.25V na saída)
+* 00011110 00 110 xxx xxxxxxxx xxxxxx11 (x é o mesmo que dizer que é irrelevante ser 1 ou 0) -> fizemos setup do LDAC o que implica que o canal é atualizado automaticamente após escrevermos no imput register
+* 00011110 00 000 000 11111111 11111111 (neste caso colocavamos 1.25V na saída)
 * os comandos que se seguem são iguais ao anterior para writes futuros
 
 2ºMétodo:
-* 0001111 00 011 000 11111111 11111111 (colocámos 1.25V na saída) -> Write to and update DAC channel A
+* 00011110 00 011 000 11111111 11111111 (colocámos 1.25V na saída) -> Write to and update DAC channel A
 
 3ºMétodo:
-* 0001111 00 000 000 11111111 11111111 -> write no input register
-* 0001111 00 001 000 xxxxxxxx xxxxxxxx -> update no register da DAC interna
+* 00011110 00 000 000 11111111 11111111 -> write no input register
+* 00011110 00 001 000 xxxxxxxx xxxxxxxx -> update no register da DAC interna
 
+## Funcionalidade do código de controlo do ADC
 # Arduino para controlar ADC 
 
 Controlo através da linha SCL0/SDA0
 
 | ADDRESS 	|             	|
 |---------	|-------------	|
-| 0010100 	| ADC pos-amp 	|
+| 0010100 	| ADC pós-amp 	|
 | 0110101 	| ADC pré-amp   |
+
+![ conversion no ADC!](img/ADC/complete_read_operation.png " conversion no ADC")
+
+
+![read/write no ADC!](img/ADC/read_write.png "read/write no ADC")
+
+## Comandos para iniciar conversão nos canais:
+
+![comands!](img/ADC/comands.PNG "read/comands")
+
+### Exemplo
+
+Exemplo de uma leitura nova canal 0 do ADC pós-amp:
+
+ * 00101000 10110000 -> write
+ * 00101001 ->read
+
