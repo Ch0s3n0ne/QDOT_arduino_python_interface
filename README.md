@@ -4,11 +4,11 @@
 
 [I2C master DAC controller code](DAC_ADC_communication/DAC_ADC_communication.ino)
 
-De momento o código desenvolvido deverá permitir a repetição de um determinado comando I2C através do pressionamento de um botão externo ao 
+De momento o código desenvolvido deverá permitir a repetição de um determinado comando I2C através do pressionamento de um botão externo
 ao Arduino. 
 
-A utilização de um novo comando deverá ser feita em código e seguida e um upload para o arduino. O inicio da comunicação I2C pelo master só é
-autorizado após pressionar o botão.  
+A utilização de um novo comando deverá ser feita em código e seguida de um upload para o arduino. O inicio da comunicação I2C pelo master só é
+autorizada após pressionar o botão.  
 
 
 
