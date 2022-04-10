@@ -7,7 +7,7 @@ ao Arduino.
 A utilização de um novo comando deverá ser feita em código e seguida de um upload para o arduino. O inicio da comunicação I2C pelo master só é
 autorizada após pressionar o botão.  
 
-![button circuit!](img/circuit.PNG "button circuit")
+![button circuit!](img/circuit.png "button circuit")
 # Arduino para  controlar a DAC
 
 [I2C master DAC controller code](DAC_communication/DAC_communication.ino)
