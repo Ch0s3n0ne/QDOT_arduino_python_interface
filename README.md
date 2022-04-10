@@ -1,14 +1,16 @@
-# Arduino para  controlar a DAC
 
-## Funcionalidade do código de controlo da DAC
-
-[I2C master DAC controller code](DAC_ADC_communication/DAC_ADC_communication.ino)
+# Funcionnamento do código de controlo da DAC/ADC
 
 De momento o código desenvolvido deverá permitir a repetição de um determinado comando I2C através do pressionamento de um botão externo
 ao Arduino. 
 
 A utilização de um novo comando deverá ser feita em código e seguida de um upload para o arduino. O inicio da comunicação I2C pelo master só é
 autorizada após pressionar o botão.  
+
+![button circuit!](img/circuit.PNG "button circuit")
+# Arduino para  controlar a DAC
+
+[I2C master DAC controller code](DAC_communication/DAC_communication.ino)
 
 
 
@@ -83,9 +85,9 @@ Exemplifico como julgo métodos de escrever para a DAC_REF_1 referenciando a DAC
 3ºMétodo:
 * 00011110 00 000 000 11111111 11111111 -> write no input register
 * 00011110 00 001 000 xxxxxxxx xxxxxxxx -> update no register da DAC interna
-
-## Funcionalidade do código de controlo do ADC
 # Arduino para controlar ADC 
+
+[I2C master ADC controller code](ADC_communication/ADC_communication.ino)
 
 Controlo através da linha SCL0/SDA0
 
