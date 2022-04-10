@@ -62,7 +62,7 @@ DB22 -> Seleciona se iremos fazer operação de multiplos bytes seguidos
 
 Temos ainda de escolher que DAC interna utilizar (temos 2 DAC's  dentro de cada):
 
-| C2 	| C1 	| C0 	| Command 	|
+| A2 	| A1 	| A0 	| Command 	|
 |----	|----	|----	|---------	|
 | 0  	| 0  	|  0 	| DAC A   	|
 | 0  	| 0  	|  1 	| DAC B   	|
