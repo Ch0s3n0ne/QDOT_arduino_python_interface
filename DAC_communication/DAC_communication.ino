@@ -62,7 +62,7 @@ void loop() {
 
     //MÉTODO 1
     Wire.beginTransmission(address_int); 
-    Wire.write(0b01111111);
+    Wire.write(0b00110000);
     Wire.write(0b00000000);
     Wire.write(0b00000011); //<--setup do LDAC em ambas as DAC's internas
     status_IIC=Wire.endTransmission();
