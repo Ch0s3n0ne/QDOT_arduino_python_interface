@@ -75,16 +75,16 @@ Exemplifico como julgo métodos de escrever para a DAC_REF_1 referenciando a DAC
 00011110 0x 111 xxx xxxxxxxx xxxxxxx0 -> o modo default é com referencia interna desativada não deve ser necessário usar este comando
 
 1ºMétodo:
-* 00011110 00 110 xxx xxxxxxxx xxxxxx11 (x é o mesmo que dizer que é irrelevante ser 1 ou 0) -> fizemos setup do LDAC o que implica que o canal é atualizado automaticamente após escrevermos no imput register
-* 00011110 00 000 000 11111111 11111111 (neste caso colocavamos 1.25V na saída)
+* 00011110 00110xxx xxxxxxxx xxxxxx11 (x é o mesmo que dizer que é irrelevante ser 1 ou 0) -> fizemos setup do LDAC o que implica que o canal é atualizado automaticamente após escrevermos no imput register
+* 00011110 00000000 11111111 11111111 (neste caso colocavamos 1.25V na saída)
 * os comandos que se seguem são iguais ao anterior para writes futuros
 
 2ºMétodo:
-* 00011110 00 011 000 11111111 11111111 (colocámos 1.25V na saída) -> Write to and update DAC channel A
+* 00011110 00011000 11111111 11111111 (colocámos 1.25V na saída) -> Write to and update DAC channel A
 
 3ºMétodo:
-* 00011110 00 000 000 11111111 11111111 -> write no input register
-* 00011110 00 001 000 xxxxxxxx xxxxxxxx -> update no register da DAC interna
+* 00011110 00000000 11111111 11111111 -> write no input register
+* 00011110 00001000 xxxxxxxx xxxxxxxx -> update no register da DAC interna
 # Arduino para controlar ADC 
 
 [I2C master ADC controller code](ADC_communication/ADC_communication.ino)
