@@ -16,7 +16,7 @@ autorizada após pressionar o botão.
 
 ## Seleção das linhas IIC
 
-| I2C SELECT1 	| I2C SELECT2 	| LINHA I2C SELECIONADA 	|
+| I2C SELECT1 	| I2C SELECT0 	| LINHA I2C SELECIONADA 	|
 |-------------	|-------------	|:-----------------------:	|
 | LOW         	| LOW         	|       SCL1/SDA1       	|
 | LOW         	| HIGH        	|       SCL2/SDA2       	|
