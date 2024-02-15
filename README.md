@@ -1,5 +1,5 @@
 
-# Funcionnamento do código de controlo da DAC/ADC
+# Funcionamento do código de controlo da DAC/ADC
 
 De momento o código desenvolvido deverá permitir a repetição de um determinado comando I2C através do pressionamento de um botão externo
 ao Arduino. 
