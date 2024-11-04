@@ -35,7 +35,7 @@ Através da linha SCL/SDA
 
 ## Adress das DAC's
 
-| ADDRESS 	|             	|             	|           	|             	|
+| ADDRESS 	| LOW/LOW (SEL1/SEL0)  	|             	|           	|             	|
 |---------	|-------------	|-------------	|-----------	|-------------	|
 | 0001100 	| DAC_STAGE_5 	|  DAC_REF_7  	| DAC_REF_3 	| DAC_STAGE_8 	|
 | 0001110 	| DAC_REF_2   	|  DAC_REF_5  	| DAC_REF_8 	| DAC_STAGE_6 	|
